@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Opossum Quantum Entanglement Search</title>
+<style>
+/* (Your CSS styles from the previous response go here) */
+body {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #000000, #222222);
+    color: #00FF00;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 700px;
+    margin: 100px auto;
+}
+
+.logo {
+    width: 250px;
+    margin-bottom: 30px;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.search-bar {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    border: 2px solid #00FF00;
+    border-radius: 0px;
+    box-sizing: border-box;
+    background-color: #111111;
+    color: #00FF00;
+}
+
+.search-button {
+    background-color: #00FF00;
+    color: #000000;
+    padding: 18px 35px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px #00FF00;
+}
+
+.search-button:hover {
+    background-color: #32CD32;
+    box-shadow: 0 0 30px #32CD32;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #333333;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #AAAAAA;
+}
+
+.blinking {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Opossum_2.jpg/292px-Opossum_2.jpg" alt="Opossum - Prepare to be Amazed!" class="logo">
+
+  <h1>Opossum Quantum Entanglement Search - Brace Yourself</h1>
+
+  <form id="searchForm" onsubmit="redirectToGoogle(); return false;">
+    <input type="text" id="searchInput" class="search-bar" placeholder="Enter your search query - Reality is optional.">
+    <button type="submit" class="search-button">Engage Quantum Entanglement!</button>
+  </form>
+
+    <p style="font-size: small; font-style: italic;" class="blinking">Warning: Searching may cause temporary displacement to alternate realities.  Side effects include confusion, existential dread, and an unshakeable urge to eat garbage.</p>
+</div>
+
+<div class="footer">
+  Powered by Opossum Quantum Entanglement Search - Defying the Laws of Physics (Probably).
+</div>
+
+<script>
+function redirectToGoogle() {
+    var searchQuery = document.getElementById("searchInput").value;
+    // Store search query in localStorage
+    localStorage.setItem('lastSearchQuery', searchQuery);
+
+    // Quantum logic
+    let finalQuery = searchQuery;
+
+    // Check if there's a previously stored search
+    const storedQuery = localStorage.getItem('storedQuery');
+    if (storedQuery) {
+        if (Math.random() < 0.5) {
+            finalQuery = storedQuery;
+            alert('The quantum field remembers! Searching for: ' + storedQuery);
+            localStorage.removeItem('storedQuery');
+        } else {
+            finalQuery = searchQuery + " inurl:quora|reddit|forum| viewthread/viewtopic| showthread|showtopic| \"index.php?topic\"";
+            localStorage.setItem('storedQuery', finalQuery);
+            alert('New Entanglement!');
+
+        }
+    } else {
+        finalQuery = searchQuery + " inurl:quora|reddit|forum| viewthread/viewtopic| showthread|showtopic| \"index.php?topic\"";
+        localStorage.setItem('storedQuery', finalQuery);
+        alert('Initiating Quantum Entanglement!');
+    }
+
+    var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(finalQuery);
+    window.location.href = googleSearchUrl;
+}
+</script>
+
+</body>
+</html>
