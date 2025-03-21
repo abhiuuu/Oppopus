@@ -1,143 +1,261 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Opossum Quantum Entanglement Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Disable Zooming -->
+<title>Quantum Bel Air Search - Navigating the Q-Field</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚗%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* (Your CSS styles from the previous response go here) */
 body {
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(45deg, #000000, #222222);
-    color: #00FF00;
-    text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, #000000, #1A1A1A);
+  color: #00FF00; /* Green Glowing by Default */
+  text-align: center;
+  overflow-x: hidden;
 }
 
 .container {
-    width: 80%;
-    max-width: 700px;
-    margin: 100px auto;
+  width: 80%; /* Reduce width for Desktop look */
+  max-width: 800px; /* Set a maximum width */
+  margin: 100px auto; /* Increased margin for desktop spacing */
+  position: relative;
 }
 
 .logo {
-    width: 250px;
-    margin-bottom: 30px;
-    animation: rotate 10s linear infinite;
+  width: 250px; /* Larger Logo */
+  margin-bottom: 30px;
+  animation: rotate 10s linear infinite, quantumPulse 3s linear infinite;
 }
 
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-    to {
-        transform: rotate(360deg);
-    }
+@keyframes quantumPulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
 }
 
 .search-bar {
-    width: 100%;
-    padding: 15px;
-    font-size: 20px;
-    border: 2px solid #00FF00;
-    border-radius: 0px;
-    box-sizing: border-box;
-    background-color: #111111;
-    color: #00FF00;
+  width: 100%;
+  padding: 18px; /* Increased padding */
+  font-size: 24px; /* Increased font size */
+  border: 2px solid #00FF00;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #0A0A0A;
+  color: #00FF00; /* Green Glowing Text */
+  text-shadow: 0 0 10px #00FF00; /* Glowing Text */
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #FFFF00;
+  box-shadow: 0 0 15px #FFFF00;
+  outline: none;
 }
 
 .search-button {
-    background-color: #00FF00;
-    color: #000000;
-    padding: 18px 35px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 22px;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 0 20px #00FF00;
+  background-color: #00FF00;
+  color: #000000;
+  padding: 18px 35px; /* Increased padding */
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 24px; /* Increased font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px #00FF00;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-button:hover {
-    background-color: #32CD32;
-    box-shadow: 0 0 30px #32CD32;
+  background-color: #00BFFF;
+  box-shadow: 0 0 25px #00BFFF;
 }
 
 .footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #333333;
-    font-size: 18px;
-    font-family: 'Orbitron', sans-serif;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: #AAAAAA;
+  text-align: center;
+  padding: 20px;
+  background-color: #222222;
+  font-size: 14px;
+  font-family: 'Orbitron', sans-serif;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #888888;
 }
 
 .blinking {
-    animation: blinker 1s linear infinite;
+    animation: blinker 0.8s linear infinite;
 }
 
 @keyframes blinker {
-    50% {
-        opacity: 0;
+    50% { opacity: 0; }
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #00FFFF;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatParticles 5s linear infinite;
+}
+
+@keyframes floatParticles {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(calc(100vw * var(--particle-x)), calc(100vh * var(--particle-y))); }
+}
+
+/* Desktop Specific Styles */
+@media (min-width: 769px) { /* Apply these styles to desktop only */
+    body {
+        font-size: 16px; /* Base font size for desktop */
+    }
+
+    .logo {
+        width: 300px;  /* Even Larger logo for desktop */
+    }
+
+    h1 {
+        font-size: 3em;  /* larger heading for desktop */
+    }
+
+    p {
+        font-size: 1.2em;  /* larger paragraphs for desktop */
     }
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    margin: 40px auto;
+  }
+  .logo {
+    width: 180px;
+  }
+  .search-bar {
+    font-size: 18px;
+    padding: 14px;
+  }
+  .search-button {
+    font-size: 18px;
+    padding: 14px 28px;
+  }
+  .footer {
+    font-size: 12px;
+    padding: 15px;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .container {
+    width: 98%;
+    margin: 30px auto;
+  }
+  .logo {
+    width: 150px;
+  }
+  .search-bar {
+    font-size: 16px;
+    padding: 12px;
+  }
+  .search-button {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+  .footer {
+    font-size: 10px;
+    padding: 13px;
+  }
+}
+
+/* Loading Animation */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #00FF00;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #00FF00;
+  width: 35px;
+  height: 35px;
+  animation: spin 1.5s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 </style>
 </head>
 <body>
 
-<div class="container">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Opossum_2.jpg/292px-Opossum_2.jpg" alt="Opossum - Prepare to be Amazed!" class="logo">
+<div id="loading">
+    <div class="spinner"></div>
+    Calibrating Quantum Entanglement... Expect Temporal Anomalies
+</div>
 
-  <h1>Opossum Quantum Entanglement Search - Brace Yourself</h1>
+<div class="container">
+  <img src="https://i.pinimg.com/originals/fa/94/f3/fa94f3158ca77f682723ee7a98d89b6b.jpg" alt="1957 Chevrolet Bel Air - Traversing the Quantum Realm" class="logo">
+
+  <h1>Quantum Bel Air Search - Initiate Q-Field Traversal</h1>
 
   <form id="searchForm" onsubmit="redirectToGoogle(); return false;">
-    <input type="text" id="searchInput" class="search-bar" placeholder="Enter your search query - Reality is optional.">
-    <button type="submit" class="search-button">Engage Quantum Entanglement!</button>
+    <input type="text" id="searchInput" class="search-bar" placeholder="Enter search parameters - Reality is non-linear.">
+    <button type="submit" class="search-button">Engage Quantum Drive!</button>
   </form>
 
-    <p style="font-size: small; font-style: italic;" class="blinking">Warning: Searching may cause temporary displacement to alternate realities.  Side effects include confusion, existential dread, and an unshakeable urge to eat garbage.</p>
+    <p style="font-size: small; font-style: italic;" class="blinking">Warning: Q-Field traversal may induce localized spacetime distortions. Opossums not liable for existential re-evaluation.</p>
 </div>
 
 <div class="footer">
-  Powered by Opossum Quantum Entanglement Search - Defying the Laws of Physics (Probably).
+  Powered by Quantum Bel Air Entanglement - Exploiting Quantum Superposition for Superior Search Results (Probably).
 </div>
 
 <script>
-function redirectToGoogle() {
-    var searchQuery = document.getElementById("searchInput").value;
-    // Store search query in localStorage
-    localStorage.setItem('lastSearchQuery', searchQuery);
+    const rickRollUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // The Rick Roll URL
 
-    // Quantum logic
-    let finalQuery = searchQuery;
+    function redirectToGoogle() {
+        document.getElementById("loading").style.display = "flex";
 
-    // Check if there's a previously stored search
-    const storedQuery = localStorage.getItem('storedQuery');
-    if (storedQuery) {
-        if (Math.random() < 0.5) {
-            finalQuery = storedQuery;
-            alert('The quantum field remembers! Searching for: ' + storedQuery);
-            localStorage.removeItem('storedQuery');
-        } else {
-            finalQuery = searchQuery + " inurl:quora|reddit|forum| viewthread/viewtopic| showthread|showtopic| \"index.php?topic\"";
-            localStorage.setItem('storedQuery', finalQuery);
-            alert('New Entanglement!');
-
-        }
-    } else {
-        finalQuery = searchQuery + " inurl:quora|reddit|forum| viewthread/viewtopic| showthread|showtopic| \"index.php?topic\"";
-        localStorage.setItem('storedQuery', finalQuery);
-        alert('Initiating Quantum Entanglement!');
+        setTimeout(function() {
+            window.location.href = rickRollUrl; // Rick Roll
+        }, 1500);
     }
 
-    var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(finalQuery);
-    window.location.href = googleSearchUrl;
-}
+    for (let i = 40; i > 0; i--) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.setProperty('--particle-x', Math.random());
+        particle.style.setProperty('--particle-y', Math.random());
+        particle.style.top = Math.random() * 100 + 'vh';
+        particle.style.left = Math.random() * 100 + 'vw';
+        document.body.appendChild(particle);
+    }
 </script>
 
 </body>
